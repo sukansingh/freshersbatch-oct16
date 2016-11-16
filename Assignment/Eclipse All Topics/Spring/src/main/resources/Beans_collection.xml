@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+
+	<bean id="collectionBean" class="com.spring.beans.CollectionBean">
+	    <property name="cityList">
+	        <list>
+	            <value>Pune</value>
+	            <value>Mumbai</value>
+	            <value>Kolkatta</value>
+	            <value>Mumbai</value>
+	        </list>
+	    </property>
+	    <property name="countrySet">
+	        <set>
+	            <value>India</value>
+	            <value>USA</value>
+	            <value>Austria</value>
+	            <value>India</value>
+	        </set>
+	    </property>
+	    <property name="zipCityMap">
+	        <map>
+	            <entry key="411001" value="Pune" />
+	            <entry key="411002" value="Mumbai" />
+				<entry key="411003" value="Kolkatta" />
+	            <entry key="411004" value="Chennai" />
+	        </map>
+	    </property>
+	    <property name="cityCountryProps">
+	        <props>
+	            <prop key="Pune">INDIA</prop>
+	            <prop key="Washington">USA</prop>
+	            <prop key="Stockholm">SWEDEN</prop>
+	        </props>
+	    </property>
+	    
+	</bean>
+</beans>

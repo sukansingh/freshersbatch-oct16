@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+
+	<!-- 
+	<bean id="messagePrinter" class="com.spring.beans.MessagePrinterBean"
+	    init-method="initBean"
+	    >
+		<property name="message" value="Welcome to the world of Spring!"/>
+	</bean>
+
+	<bean class="com.spring.processor.MessageBeanPostProcessor" />
+ -->
+ 
+ 	<bean id="item1" class="com.spring.beans.Item">
+ 		<property name="name" value="Toy"/>
+ 		<property name="price" value="100"/>
+ 	</bean>
+ 	<bean id="item2" class="com.spring.beans.Item">
+ 		<property name="name" value="Teddy"/>
+ 		<property name="price" value="200"/>
+ 	</bean>
+ 	
+ 	<bean id="order1" class="com.spring.beans.Order">
+ 		<property name="name" value="Purchase Toy"/>
+ 		<property name="item" ref="item1"/>
+ 	</bean>
+ 	<bean id="order2" class="com.spring.beans.Order">
+ 		<property name="name" value="Purchase Teddy"/>
+ 		<property name="item" ref="item2"/>
+ 	</bean>
+ 	
+ 	<bean id="messagePrinter" class="com.spring.beans.MessagePrinterBean" init-method="initBean">
+ 		<property name="message" value="Hello.. This is MessagePrinterBean"/>
+ 	</bean>
+</beans>

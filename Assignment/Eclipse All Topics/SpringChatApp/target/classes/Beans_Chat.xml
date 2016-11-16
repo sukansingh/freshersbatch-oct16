@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+
+	<bean id="user1" class="com.chat.beans.User">
+ 		<property name="u_id" value="1"/>
+ 		<property name="u_name" value="Tom" />
+ 	</bean>
+ 	<bean id="user2" class="com.chat.beans.User">
+ 		<property name="u_id" value="2"/>
+ 		<property name="u_name" value="Jerry" />
+ 	</bean>
+ 	<bean id="user3" class="com.chat.beans.User">
+ 		<property name="u_id" value="3"/>
+ 		<property name="u_name" value="Ivan" />
+ 	</bean>
+ 	<bean id="user4" class="com.chat.beans.User">
+ 		<property name="u_id" value="4"/>
+ 		<property name="u_name" value="John" />
+ 	</bean>
+ 	
+ 	<!-- ////////////////////////////////////////////////////////////// -->
+ 	
+ 	<bean id="chatRoom1" class="com.chat.beans.ChatRoom">
+ 		<property name="r_id" value="100"/>
+ 		<property name="r_name" value="Sport" />
+ 		<property name="userList">
+ 			<set>
+ 				<ref bean="user1"/>
+ 				<ref bean="user2"/>
+ 			</set>
+ 		</property>
+ 		<property name="messageList">
+ 			<set>
+ 				<ref bean="message1"/>
+ 				<ref bean="message2"/>
+ 			</set>
+ 		</property>
+ 	</bean>
+ 	<bean id="chatRoom2" class="com.chat.beans.ChatRoom">
+ 		<property name="r_id" value="101"/>
+ 		<property name="r_name" value="Club" />
+ 		<property name="userList">
+ 			<set>
+ 				<ref bean="user3"/>
+ 				<ref bean="user4"/>
+ 			</set>
+ 		</property>
+ 		<property name="messageList">
+ 			<set>
+ 				<ref bean="message3"/>
+ 				<ref bean="message4"/>
+ 			</set>
+ 		</property>
+ 	</bean>
+ 	
+ 	<!-- ////////////////////////////////////////////////////////////// -->
+ 	
+ 	<bean id="message1" class="com.chat.beans.Message">
+ 		<property name="msg_id" value="200"/>
+ 		<property name="msg" value="Hello I'm Tom from Sport" />
+ 		<property name="user" ref="user1"/>
+ 		<property name="chatRoom" ref="chatRoom1"/>
+ 	</bean>
+ 	<bean id="message2" class="com.chat.beans.Message">
+ 		<property name="msg_id" value="201"/>
+ 		<property name="msg" value="Hello I'm from Sport" />
+ 		<property name="user" ref="user2"/>
+ 		<property name="chatRoom" ref="chatRoom1"/>
+ 	</bean>
+ 	<bean id="message3" class="com.chat.beans.Message">
+ 		<property name="msg_id" value="202"/>
+ 		<property name="msg" value="Hello I'm Tom from Club" />
+ 		<property name="user" ref="user3"/>
+ 		<property name="chatRoom" ref="chatRoom2"/>
+ 	</bean>
+ 	<bean id="message4" class="com.chat.beans.Message">
+ 		<property name="msg_id" value="203"/>
+ 		<property name="msg" value="Hello I'm from Club" />
+ 		<property name="user" ref="user4"/>
+ 		<property name="chatRoom" ref="chatRoom2"/>
+ 	</bean>
+	<!--  
+	<bean id="collectionBean" class="com.spring.beans.CollectionBean">
+	    <property name="cityList">
+	        <list>
+	            <value>Pune</value>
+	            <value>Mumbai</value>
+	            <value>Kolkatta</value>
+	            <value>Mumbai</value>
+	        </list>
+	    </property>
+	    <property name="countrySet">
+	        <set>
+	            <value>India</value>
+	            <value>USA</value>
+	            <value>Austria</value>
+	            <value>India</value>
+	        </set>
+	    </property>
+	    <property name="zipCityMap">
+	        <map>
+	            <entry key="411001" value="Pune" />
+	            <entry key="411002" value="Mumbai" />
+				<entry key="411003" value="Kolkatta" />
+	            <entry key="411004" value="Chennai" />
+	        </map>
+	    </property>
+	    <property name="cityCountryProps">
+	        <props>
+	            <prop key="Pune">INDIA</prop>
+	            <prop key="Washington">USA</prop>
+	            <prop key="Stockholm">SWEDEN</prop>
+	        </props>
+	    </property>
+	    
+	</bean>
+	-->
+</beans>
